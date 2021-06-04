@@ -28,7 +28,7 @@ public class CommandActorFactory {
 		    //         0     1   2    3    4          5       6           7        8          9 ...
 			if (cmdArr[0].equals("define") && cmdArr[1].equals("ship")) {
 			
-					 idActor = new AgentID(cmdArr[3]);
+					 idActor = new AgentID(cmdArr[2]);
 					
 					
 					// TODO this may already be covered but, allow for multiple additions (for or while loop until ; ) as long as the getCommandMunition is functioning and catches the outliers, we shouldn't have a problem. 
@@ -63,15 +63,15 @@ public class CommandActorFactory {
 
 			// create actor *actorFamily* from *actorID* at *position* with azimuth *course*
 			// and speed *speed*
-
-// create actor Ship from Carrier at (latitude, longitude, altitude ) with azimuth (degree), and speed (speed)
+										  //<--(coordinates)----------->//
+// create actor (Ship) from (Carrier) at (latitude, longitude, altitude ) with azimuth (degree), and speed (speed)
 			             // coords split 0 1 2    3 4 5      6
 //   0     1      2    3    4      5    6         7             8       9     10      11      12   13    14
 
 			else if (cmdArr[0].equals("create") && cmdArr[1].equals("actor")) {
 				
 				 idActor = new AgentID(cmdArr[2]);
-				AgentID id = new AgentID(cmdArr[4]);
+				 AgentID id = new AgentID(cmdArr[4]);
 				String[] coords = cmdArr[6].split("*'/");
 				Latitude latitude = new Latitude(Integer.valueOf(coords[0]), Integer.valueOf(coords[1]), Double.valueOf(coords[2]));
 				
