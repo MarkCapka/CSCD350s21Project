@@ -69,9 +69,9 @@ public class CommandActorFactory {
 //   0     1      2    3    4      5    6         7             8       9     10      11      12   13    14
 
 			else if (cmdArr[0].equals("create") && cmdArr[1].equals("actor")) {
-				AgentID id = new AgentID(cmdArr[2]);
-				 idActor = new AgentID(cmdArr[4]);
-
+				
+				 idActor = new AgentID(cmdArr[2]);
+				AgentID id = new AgentID(cmdArr[4]);
 				String[] coords = cmdArr[6].split("*'/");
 				Latitude latitude = new Latitude(Integer.valueOf(coords[0]), Integer.valueOf(coords[1]), Double.valueOf(coords[2]));
 				
